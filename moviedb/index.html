@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+    <body>
+      <div class="slider">
+      </div>
+        <form class="jumbotron">
+        <input type="text" id="moviename" placeholder="Search Movie..."></input>
+        <button class="btn btn-primary" id="search">SEARCH</button>
+    </form>
+    <div class="swiper-container">
+        <div class="swiper-wrapper" id="swiper-wrapper"><div class="swiper-slide" style="background-image:url(images/ford.jpg)"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+    </div>
+<div class="jumbotron">
+    <h3 class="text-center">POPULAR MOVIES</h3>
+  <div class="swiper-containers">
+    <div class="swiper-wrapper" id="popular">
+    </div>
+  </div>
+  </div>
+<div class="jumbotron">
+    <h3 class="text-center">TRENDING MOVIES</h3>
+  <div class="swiper-containers">
+    <div class="swiper-wrapper" id="trending">
+    </div>
+  </div>
+  
+  </div>
+   
+<div class="jumbotron">
+  <h3 class="text-center">UPCOMING MOVIES</h3>
+<div class="swiper-containers">
+  <div class="swiper-wrapper" id="upcoming">
+  </div>
+</div>
+</div>
+<div class="video">
+
+</div>
+</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>        
+        <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+        <script>
+            var swiper = new Swiper('.swiper-containers', {
+              slidesPerView: 4,
+              spaceBetween: 30,
+              slidesPerGroup: 4,
+              loop: true,
+              loopFillGroupWithBlank: true,
+              pagination: {
+                el: '.swiper-pagination3',
+                clickable: true,
+              },
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              },
+              breakpoints: {
+                1080:{
+        slidesPerView: 4,
+      slidesPerGroup:4
+    },
+    360: {
+      slidesPerView: 1,
+      slidesPerGroup:1
+    },
+    790:{
+        slidesPerView: 2,
+      slidesPerGroup:2
+    }
+    
+}
+            });
+      
+          </script>
+          
+        <script>
+            var swiper1 = new Swiper('.swiper-container', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+    rotate: 30,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows : true,
+    },
+    
+    pagination: {
+    el: '.swiper-pagination',
+    },
+    loop:true,
+    autoplay:true
+    });
+        </script>
+       
+<script src="js/app.js"></script>
+    
+</html>
