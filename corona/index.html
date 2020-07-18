@@ -1,0 +1,428 @@
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Community Website</title>
+    </head>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/icon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="css/homepage.css">
+<script src="js/Chart.min.js"></script>
+<script src="canvasgraph/jquery.canvasjs.min.js"></script> 
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script src="js/font-awesome_icons.js"></script>
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+      <script src="js/smoothscroll.min.js"></script>
+<script src="js/animationCounter.min.js"></script>
+    <body> 
+        <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+              <a href="#!" class="brand-logo center">PatientHelper</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                <i id="menu" class="material-icons">menu</i></a>
+              <ul class="left hide-on-med-and-down">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#section">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Dashboard</a></li>
+            </ul>
+            <ul class="right hide-on-med-and-down">
+    <li id="accountbox">
+     
+    </li>
+              <li>  
+
+                <div class="switch">
+                  <label style="color:white">
+                      DarkMode
+                    <input type="checkbox" id="myCheck" onclick="mode()">
+                      <span class="lever"></span>
+                    LightMode
+                  </label>
+                </div>
+
+              </li>
+
+                <li><a href="#"><i class="material-icons center">add</i></a></li>
+                <li><a href="#"><i class="material-icons center">create</i></a></li>
+            </ul>
+            </div>
+          </nav>
+        
+        </div>
+          <ul class="sidenav black darken-5 white-text" id="mobile-demo" >
+            <li style="background: #3cba9f;padding-top:0;border:1px solid white"><h4 style="text-align: center;padding:0">PatientHelper</h4></li>
+            <li id="accountbox1"></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#dashboard.html">Dashboard</a></li>
+            <li>  
+
+</li>
+<li>  
+
+                <div class="switch">
+                  <label style="color:white;font-size: 18px">
+                    
+                    <input type="checkbox" id="myCheck" onclick="mode()">
+                      <span class="lever"></span>
+                    LightMode
+                  </label>
+                </div>
+
+              </li>
+
+            <li><a href="#"><i class="material-icons center">group</i>Group Members</a></li>
+            <li><a href="#"><i class="material-icons center">add</i>Create Account</a></li>
+            <li><a href="#"><i class="material-icons center">create</i>Edit</a></li>
+            </ul> 
+        <div class="row" id="home">
+            <div class="grid-example1 col s12 m8">
+             <h1>Stand together by not standing together.</h1>
+                 <p>It is literally Known as Nabh Ojal.Which meaning Nabh-Sky and Ojal Refers Vision
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos fugiat corrupti voluptates labore ipsa aperiam dolore architecto. Odio deserunt iusto harum repudiandae quia, nostrum, quo sunt, dolorem illo adipisci in?
+                 </p><a class="waves-effect waves-light  btn" href="login.html"><i class="material-icons left">add</i>Join Now</a>
+                 
+            </div>
+            <div class="grid-example2 col s12 m6 l6 xl6" >
+                    
+            </div>
+          </div>
+          
+
+              <div class="section">
+                  <div class="row" id="chartrow">
+                    <h3 style="text-align: center;color:grey">Total Cases Around India</h3><br>
+                    <div class="input-field col s12">
+    <select id="myDropdown" class="materialSelect">
+      <option value="" disabled selected>Country</option>
+    </select>
+  </div>
+             
+   <div class="row" style="text-align: center;padding:0" id="cards" >
+      <div class="col s12 m6 l4 xl4 waves-effect waves-teal" >
+  <div class="card waves-effect waves-teal" style="border-bottom: 5px solid #3e95cd" id="card">
+        <div class="card-content">
+          <span class="card-title">Recovered</span>
+          <h6 style="color:grey;border-left:none;font-size:32px;padding:15px" id="recovercount" class="count">
+      This is an example quotation that uses the blockquote tag.
+    </h6>
+
+    <h6 class="grey-text">Last Updated </h6>
+    <h6 class="date" >date</h6>
+          <p class="grey-text">Number Of Recoveries From Covid-19</p>
+        </div>
+       </div>
+ </div>
+ <div class="col s12 m6 l4 xl4 waves-effect waves-teal" >
+  <div class="card  waves-effect waves-teal" style="border-bottom: 5px solid #3cba9f" id="card">
+        <div class="card-content ">
+          <span class="card-title">Confirmed</span>
+          <h6 style="padding:15px;font-size:32px;color:grey;border-left:none;" id="confirmcount" class="count">
+      This is an example quotation that uses the blockquote tag.
+    </h6>
+    <h6 class="grey-text">Last Updated </h6>
+    <h6 class="date" >date</h6>
+          <p class="grey-text">Number Of Infected From Covid-19</p>
+        </div>
+       </div>
+ </div>
+ <div class="col s12 m6 l4 xl4 waves-effect waves-teal" >
+  <div class="card  waves-effect waves-teal" style="border-bottom: 5px solid #E7717D" id="card">
+        <div class="card-content">
+          <span class="card-title">Death</span>
+          <h6 style="padding:15px;font-size:32px;color:grey;border-left:none" id="deathcount"class="count">
+      This is an example quotation that uses the blockquote tag.
+    </h6>
+
+    <h6 class="grey-text">Last Updated </h6>
+    <h6 class="date" >date</h6>
+          <p class="grey-text">Number Of Death Cases By Covid-19</p>
+        </div>
+       </div>
+ </div>
+   </div>
+                  <div class="col s12 m12 l12 xl8 waves-effect waves-teal" id="chart1" >
+                      <canvas id="bar-chart-grouped" ></canvas>
+                  </div>
+                  <div class="col s12 m6 l12 xl4 waves-effect waves-teal" id="chart2" >
+                    <canvas id="doughnut-chart"></canvas>
+                        
+                  </div>
+                   <div class="col s12 m6 l12 xl4 waves-effect waves-teal" id="chart3" >
+                 
+                  <canvas id="mychart"></canvas>
+                </div>
+             </div>
+              <a href="dashboard.html"><h6  style="
+box-shadow: 6px 6px 6px rgba(0,0,0,.5);padding:10px;text-align:center;color:grey;text-decoration: underline;">See more</h6></a>
+            </div>
+              <div class="attach"><H4 style="text-align: center; color:white;">OUR WORK'S</H4>
+                        
+                        <i id="time" class="fa fa-hourglass" aria-hidden="true"></i>
+
+                      <h4 style="text-align: center;color:white">Time is Important!!</h4>     
+                    <p style="color:white;text-align: center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam perspiciatis, corporis adipisci recusandae minima nemo facere amet molestias maxime, eius ipsa sequi modi deleniti cupiditate repudiandae ad, mollitia asperiores 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam perspiciatis, corporis adipisci recusandae minima nemo facere amet molestias maxime, eius ipsa sequi modi deleniti cupiditate repudiandae ad, mollitia asperiores 
+                 </p>    
+              
+            </div>
+<div class="container">
+    <div class="timeline">
+      
+      <div class="timeline-event">
+        <div class="card timeline-content">
+          <div class="card-image waves-effect waves-block waves-light"><!-- 
+            <img class="activator" src="https://lorempixel.com/800/400/food/1"> -->
+            <span class="card-title gradient white-text text-darken-4">
+              2018<br>
+              <small>January 17th</small>
+            </span>
+          </div>
+          <div class="card-content teal white-text">
+            <p>Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water. Why? Washing your hands with soap and water or using alcohol-based hand rub kills viruses that may be on your hands.
+</p>
+          </div>
+        </div>
+        <div class="timeline-badge white-text">
+        </div>
+      </div>
+      
+      
+      <div class="timeline-event">
+        <div class="card timeline-content">
+          <div class="card-image waves-effect waves-block waves-light"><!-- 
+            <img class="activator" src="https://lorempixel.com/800/400/food/2"> -->
+            <span class="card-title gradient white-text text-darken-4">
+              2018<br>
+              <small>January 17th</small>
+            </span>
+          </div>
+          <div class="card-content teal white-text">
+            <p>Maintain at least 1 metre (3 feet) distance between yourself and others. Why? When someone coughs, sneezes, or speaks they spray small liquid droplets from their nose or mouth which may contain virus. If you are too close, you can breathe in the droplets, including the COVID-19 virus if the person has the disease.
+</p>
+          </div>
+        </div>
+        <div class="timeline-badge white white-text">
+        </div>
+      </div>
+      
+      
+      <div class="timeline-event">
+        <div class="card timeline-content">
+          <div class="card-image waves-effect waves-block waves-light"><!-- 
+            <img class="activator" src="https://lorempixel.com/800/400/food/3"> -->
+            <span class="card-title gradient white-text text-darken-4">
+              2018<br>
+              <small>January 17th</small>
+            </span>
+          </div>
+          <div class="card-content teal white-text">
+            <p>Avoid touching eyes, nose and mouth. Why? Hands touch many surfaces and can pick up viruses. Once contaminated, hands can transfer the virus to your eyes, nose or mouth. From there, the virus can enter your body and infect you.
+</p>
+          </div>
+        </div>
+        <div class="timeline-badge grey white-text">
+              </div>
+      </div>
+
+  
+            
+      
+      <div class="timeline-event">
+        <div class="card timeline-content">
+          <div class="card-image waves-effect waves-block waves-light"><!-- 
+            <img class="activator" src="https://lorempixel.com/800/400/food/4"> -->
+            <span class="card-title gradient white-text text-darken-4">
+              2018<br>
+              <small>January 17th</small>
+            </span>
+          </div>
+          <div class="card-content teal white-text">
+            <p>Avoid going to crowded places. Why? Where people come together in crowds, you are more likely to come into close contact with someone that has COIVD-19 and it is more difficult to maintain physical distance of 1 metre (3 feet).
+
+</p>
+          </div>
+        </div>
+        <div class="timeline-badge red lighten-3 white-text">
+          
+        </div>
+      </div>
+    
+      
+    </div>
+  </div>
+
+              
+              
+
+            <div class="fixed-action-btn">
+                <a class="btn-floating btn-large blue">
+                  <i class="large material-icons">mode_edit</i>
+                </a>
+                <ul>
+                  <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                  <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+                  <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                  <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+                </ul>
+              </div>
+              <footer class="page-footer">
+                <div class="container">
+                  <div style="" class="row">
+                    <div class="col l4 s12">
+                      <h5 class="white-text">PatientHelper</h5>
+                      <p class="grey-text text-lighten-4">Trust Is Best!!You can Trust us Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga officiis, consequunt</p>
+                    </div>
+                    
+                    <div class="col l4 s12">
+                        <h5 class="white-text">Follow Us On</h5>
+                        <ul>
+                        <li><a href="#" class="grey-text text-lighten-3"><i class="fa fa-whatsapp" aria-hidden="true"></i>
+                            Whatsapp</a></li>
+                            <li><a href="#" class="grey-text text-lighten-3"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+                            <li><a href="#" class="grey-text text-lighten-3"><i class="fa fa-facebook" aria-hidden="true"></i> FaceBook</a></li>
+                        </ul>  
+                    </div>
+                    <div class="col l4  s12">
+                      <h5 class="white-text">MENU</h5>
+                      <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Skills</a></li>
+                      </ul>
+                    </div>
+                    <!--<form class="col s12">
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Comments</label>
+                          </div>
+                        </div>
+                      </form>-->
+                  </div>
+                </div>
+                <div class="footer-copyright">
+                  <div class="container">
+                  © 2020 Copyright PatientHelper.All rights Reserved
+                <!--<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                --> </div>
+                </div>
+              </footer>
+       <div class="stickynotification"><center>
+        See In Desktop view to see the Charts Clearly</center>
+       </div>
+    </body>
+ <script src="js/homepage.js"></script>
+    <script>
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+    $('select').formSelect();
+
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'top'
+    });
+        var elems1 = document.querySelectorAll('.parallax');
+    var instances1 = M.Parallax.init(elems1,{
+      responsiveThreshold:9
+    });
+
+  });
+
+  function mode(){
+    var switchbox=document.querySelectorAll("#myCheck");
+    var index=0;
+   if(switchbox[index].checked == true || switchbox[index+1].checked == true){
+    document.querySelector("body").style.background="white";    
+    document.querySelector("#cards").style.background="white";    
+document.querySelector(".select-wrapper input.select-dropdown").style.color="grey";
+document.querySelector(".select-wrapper .caret").style.fill="grey";
+document.querySelector(".dropdown-content li>span").style.background="white";
+var select=document.querySelectorAll("option");
+   for(var i=0;i<select.length;i++){
+       select[i].style.background="white";
+       }
+    document.querySelector("#chartrow").style.background="white";  
+    document.querySelector(".section").style.background="white";
+    var card=document.querySelectorAll("#card");
+    for(var i=0;i<card.length;i++){
+       card[i].style.background="white";
+
+       card[i].style.color="black";
+       }
+       document.querySelector("#mobile-demo li a").background="white"; 
+   }
+
+   else {
+    document.querySelector("body").style.background="#272727";
+document.querySelector(".select-wrapper input.select-dropdown").style.color="white";   
+document.querySelector(".select-wrapper .caret").style.fill="white";
+
+ document.querySelector("#chartrow").style.background="#272727";  
+    document.querySelector(".section").style.background="#272727";
+    var card=document.querySelectorAll(".card");
+var card=document.querySelectorAll("#card");
+    for(var i=0;i<card.length;i++){
+       card[i].style.background="#272727";
+
+       card[i].style.color="white";
+       } 
+  
+    document.querySelector("#cards").style.background="#272727";
+    
+       document.querySelector("#mobile-demo li a").background="#272727"; 
+   }
+ }
+  // });
+  var scroll = new SmoothScroll('a[href*="#"]');
+ function onloading(){
+  var accountbox=document.querySelector("#accountbox");
+  if(localStorage.getItem("storageName")!=null){
+  var firstcharacter=localStorage.getItem("storageName").charAt(0);
+  accountbox.innerHTML=`<a  class="btn-floating btn-large waves-effect waves-light grey darken-3 white-text" id="account" onclick="logout()"><h6 id="accounttext"/>${firstcharacter}</h6></a>`;
+    document.querySelector("#accountbox1").innerHTML=`<center><a  class="btn-floating btn-large waves-effect waves-light grey darken-3 white-text" style="width:100px;height:100px" id="account" onclick="logout()"><h3 id="accounttext"/>${firstcharacter}</h3></a></center>`
+
+}
+
+ }
+  window.onload = onloading;
+
+  function logout()
+  {
+    firebase.auth().signOut().then(()=>{
+      localStorage.clear();
+        window.location.href = "login.html";
+    }).catch(function(error) {
+      alert(error.message);
+});
+  }
+   </script>
+  }
+
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase.js"></script>
+<script>
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCIhw9VNar6w5zH3LJjS7C_roAPgFR70oo",
+    authDomain: "coronaviruswebapp-c0eae.firebaseapp.com",
+    databaseURL: "https://coronaviruswebapp-c0eae.firebaseio.com",
+    projectId: "coronaviruswebapp-c0eae",
+    storageBucket: "coronaviruswebapp-c0eae.appspot.com",
+    messagingSenderId: "148780102459",
+    appId: "1:148780102459:web:c3a4e1b8d30e064b5c3d1e",
+    measurementId: "G-N3MS6J5KSW"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+</html>

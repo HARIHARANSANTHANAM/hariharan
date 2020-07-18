@@ -1,0 +1,135 @@
+<html>
+
+<head>    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+  	*{
+  		margin:0;
+  		box-sizing: border-box;
+  	}
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    font-family: san-serif,roboto;
+    background: #fff;
+    overflow:hidden;
+    background:linear-gradient(to right,#3cba9f,#3e95cd),url("images/active.webp");
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
+
+    main {
+      flex: 1 0 auto;
+    }
+
+    
+#login{
+	border-radius: 5px;
+}
+    .container{
+    	left:0;
+    }
+       main {
+      flex: 1 0 auto;
+    }
+
+  </style>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+</head>
+
+<body>
+
+    
+     <div class="section"></div>
+     <div class="row">
+        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;padding:0px">
+<div class="row">
+          <div class="input-field col s12 center"> <a  class="btn-floating btn-large waves-effect waves-light grey darken-3 white-text" style="position:relative;width:70px;height:70px">
+            <img src="images/login.jpg" alt=""  style="position:absolute;object-fit: cover;width:100%;height:100%;left:0;top:0"></a>
+            <p class="center login-form-text">PatientHelper</p>
+          </div>
+          <form class="col s12" method="post">
+            <div class='row'>
+              <div class='col s12'>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class="input-field col s12">
+            <i class="mdi-social-person-outline prefix"></i>
+            <input id="email" type="email">
+            <label for="username" class="center-align">Email</label>
+          </div>
+            </div>
+
+            <div class='row'><div class="input-field col s12">
+            <i class="mdi-action-lock-outline prefix"></i>
+            <input id="password" type="password">
+            <label for="password">Password</label>
+          </div>
+              <label style='float: right;'>
+								<a class='teal-text' style="font-size:14px" href='#!'><b>Forgot Password?</b></a>
+							</label>
+            </div>
+
+            <br />
+             <div class="row">
+          <div class="input-field col s12">
+            <a  class="btn waves-effect waves-light col s12" onclick="Login()">Login</a>
+          </div>
+                    <div class="input-field col s12 m12 l12 xl12">
+            <p class="margin medium-small"><a onclick="signup()"class="btn waves-effect waves-teal col s12">SignUp!</a></p>
+          </div>      
+        </div>
+
+        </div>
+       <div class="row">
+        	<div class="input-field col s12 m12 l12 xl12"><center>
+         <p  class="margin medium-small" style="color:grey;text-align: center"> New User? Then Enter the Above Field And click the Sign Up Button</p>
+         </center> 
+         </div> 
+        </div>
+ 
+        
+          </form>
+        </div>
+      </div>
+  
+    <div class="section"></div>
+    <div class="section"></div>
+  </main>
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+ </script><!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCIhw9VNar6w5zH3LJjS7C_roAPgFR70oo",
+    authDomain: "coronaviruswebapp-c0eae.firebaseapp.com",
+    databaseURL: "https://coronaviruswebapp-c0eae.firebaseio.com",
+    projectId: "coronaviruswebapp-c0eae",
+    storageBucket: "coronaviruswebapp-c0eae.appspot.com",
+    messagingSenderId: "148780102459",
+    appId: "1:148780102459:web:c3a4e1b8d30e064b5c3d1e",
+    measurementId: "G-N3MS6J5KSW"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script src="js/login.js"></script>
+
+</html>

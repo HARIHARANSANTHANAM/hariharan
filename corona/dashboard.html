@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/icon.css">
+<link rel="stylesheet" href="css/materialize.min.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<script src="js/Chart.min.js"></script>
+<script src="js/jquery-3.5.1.slim.min.js"></script>
+<script src="canvasgraph/jquery.canvasjs.min.js"></script> 
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/in/in-all.js"></script>
+
+
+<style>
+	
+	</style>
+<body>
+	<!--<div class="navbar">-->
+  <nav > <!-- navbar content here  --> <a href="#" data-target="slide-out" class="sidenav-trigger "><i class="material-icons">menu</i></a> 
+  	      <a href="#" class="brand-logo center">PatientHelper</a>
+
+  <ul class="right hide-on-med-and-down">
+  	<li><a href="#">Home</a></li>
+  	<li><a href="#">DashBoard</a></li>
+  	<li><a href="#">AboutUs</a></li>
+  </ul>
+
+  </nav>
+
+<!--</div>-->
+  <ul id="slide-out" class="sidenav sidenav-fixed">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="images/recover.jpg">
+      </div>
+      <a href="#user"><img class="circle" src="images/active.webp"></a>
+      <a href="#name"><span class="white-text name">John Doe</span></a>
+      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">local_hospital</i>PatientHelper</a></li>
+    <li>  </li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  </ul>
+  <div class="container">
+
+        <div class="input-field col s12 m12 l12 xl6 center">
+          <i class="material-icons prefix">search</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">Search</label>
+        </div>
+ <div class="row">
+<div class="col s12 m12 l12 xl6">
+ 		<canvas id="mychart"></canvas>
+ 		</div>
+ 	<div class="col s12 m6 l12 xl6">
+ 		     <canvas id="doughnut-chart"></canvas>
+ 		  </div>
+ 		</div>
+
+<br><br>
+<div class="row">
+<div class="col s12 m6 l4 xl4">
+<div class="card">
+	<div class="card-content" style="color:white;background: url(images/active.webp),linear-gradient(-45deg,indigo,rgba(0,0,0,.5));background-size: cover;background-blend-mode: overlay;">
+	          <span class="card-title" style="text-align: center;">Confirmed</span>
+	<br><br><p style="text-align: center;" id="ccount">+1,90,000	</p><br>
+<p style="text-align: center;font-size:22px;font-weight: bold;" id="ccounts">40,00,000</p></div>
+</div>
+</div>
+<div class="col s12 m6 l4 xl4">
+<div class="card">
+<div class="card-content" style="text-align: center;color:white;background: url(images/recover.jpg),linear-gradient(-45deg,indigo,rgba(0,0,0,.5));background-size: cover;background-blend-mode: overlay;">
+	          <span class="card-title" style="text-align: center;">Recovered</span>
+<br><br>
+<p style="text-align: center" id="rcount">-6,700
+	</p><br>
+<p style="text-align: center;font-size:22px;font-weight: bold" id="rcounts">2,30,000</p></div></div>
+</div>
+<div class="col s12 m12 l4 xl4">
+<div class="card" >
+
+	<div class="card-content" style="color:white;background: url(images/coronavirus.jpg),linear-gradient(-45deg,indigo,rgba(0,0,0,.5));background-size: cover;background-blend-mode: overlay;">
+	          <span class="card-title" style="text-align: center;">Died</span>
+<br></br>
+	<p style="text-align: center" id="ddcount">+10,000	</p>
+	<br>
+<p style="text-align: center;font-size:22px;font-weight: bold" id="ddcounts">3,00,000</p></div></div>
+</div>
+ 	<div class="col s12 m12 l12 xl12">
+ 		<canvas id="bar-chart-grouped" width="800" height="450"></canvas>
+</div>
+<div class="col s12 m12 l12 xl12">
+  <div id="map"></div>
+
+</div>
+</div>
+</body>
+<script type="text/javascript" src="js/dashboard.js"></script>
+</html>
