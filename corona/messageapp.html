@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/icon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+
+<script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+<style type="text/css">
+	*{
+		padding: 0;
+		margin:0;
+		box-sizing: border-box;
+	}
+  html{
+    overflow:hidden;
+  }
+	body{
+		background: #272727;
+		font-family: Barlow,roboto;
+		overflow:hidden;
+    margin:0;
+	}
+.card{
+  background: #524c4c94;
+  color:white;
+}
+.card-content i{
+	color:white;
+}
+.card-content blockquote{
+	color:white;
+}
+.nav-wrapper{
+background-color:#3cba9f;
+font-family:san-serif,roboto;
+z-index:4000;
+}
+#friends::-webkit-scrollbar{
+	width:6px;
+  height:2px;
+}
+  /* Track */
+  #friends::-webkit-scrollbar-track {
+    background:#1e88e5;
+  }
+  #friends::-webkit-scrollbar-thumb {
+    background:black; 
+    border-radius: 2px;
+    height:5px;
+      background:white; 
+    border-radius: 4px;
+  }
+#msg{
+	scroll-behavior: smooth;
+  height:75vh;
+}
+#msg::-webkit-scrollbar{
+	width:6px;
+}
+  /* Track */
+  #msg::-webkit-scrollbar-track {
+    background:#1e88e5; 
+  }
+  #msg::-webkit-scrollbar-thumb {
+    background:white; 
+    border-radius: 4px;
+    height:auto;
+  }
+  .collection{
+  	padding:0;
+  	margin: 0;
+  	border:none;
+  }
+.collection-item .avatar{
+   border:none;
+   
+}
+.collection .collection-item{
+	background:#272829;
+	color:white;
+	min-height:70px !important;
+	line-height: 2.5rem !important;
+	border-bottom:3px solid #423c3c;
+
+}
+.collection .collection-item:nth-child(even){
+	background:#423c3c,#272829;
+	color:white;
+}
+span .title{
+	font-size: 20px;
+	text-align: center;
+}
+.card .card-content{
+	padding:10px;
+}
+#cardright::after{
+	content:"";
+   position: absolute;
+   left:100%;
+   top:40%;
+   width:8px;
+   height:10px;
+     width: 0; 
+  height: 0; 
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid #1E88E5;
+}
+.stickynotification{
+  position:fixed;
+  overflow: hidden;
+  top:88%;
+  background:black;
+  width:73.5%;
+  color:white;
+  font-size:20px;
+  z-index:3;
+  border-left: 5px solid #1e88e5;
+
+}
+#contextmenu,#contextmenu1{
+	position: absolute;
+	display: none;
+}
+#contextmenu{
+  width: 160px;
+  z-index:1000;
+}
+#contextmenu1 {
+  width: 150px;
+  z-index:1000;
+}
+#contextmenu a{
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+#contextmenu1 a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+#contextmenu a:nth-child(1),#contextmenu1 a:nth-child(1)
+{
+ 
+  border-top-right-radius: 5px; 
+  border-top-left-radius: 5px;
+}
+#contextmenu1 a:nth-child(1)
+{
+ 
+  border-top-right-radius: 5px; 
+  border-top-left-radius: 5px;
+}
+#contextmenu a:nth-child(3)
+{
+ 
+  border-bottom-left-radius: 5px; 
+  border-bottom-right-radius: 5px;
+}
+#contextmenu1 a:last-child(3)
+{
+ 
+  border-bottom-left-radius: 5px; 
+  border-bottom-right-radius: 5px;
+}
+#contextmenu a:hover,#contextmenu1 a:hover {
+  background-color:#1e88e5;
+  color:white;
+}
+/*
+#contextmenu a.active {
+  background-color:#1e88e5;
+  color: white;
+}*/
+.active1 {
+  background:#208dea!important;
+  color: white;
+}
+#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 5%;
+  left:80%;
+  background-color:#1e88e5;
+  
+}
+
+h6{
+	font-size:17px;
+	margin-top: 6px;
+}
+
+nav{
+background-color:#1e88e5;
+z-index:4000;
+height:0!important;
+}
+.sidenav{
+  overflow-y:hidden;
+  overflow-x:hidden;
+}
+.sidenav-fixed{
+  background:#423c3c;
+  width:330px!important;
+}
+.row .col.s12{
+  left:0;
+}
+.background{
+  border-left:4px solid #1e88e5;
+}
+.user-view:before{
+  position: absolute;
+  content: "";
+  height:100%;
+  width:60px;
+  background:linear-gradient(to right,rgba(0,00,0,.1),white);
+  top: 0%;
+  left:-40%; transition: .4s;
+  z-index:1000;
+}
+.user-view:hover.user-view:before{
+  left:110%;
+}
+
+@media (min-width:300px) and (max-width:678px)
+{
+	.stickynotification{
+		width:95%;
+	}
+	h6{
+		font-size:12px;
+	}
+	.collection {
+		height:auto;
+	}
+	.lastseen{
+		float:left !important;
+	}
+span .title{
+	font-size: 14px !important;
+}
+.container{
+      left:0%;
+      top:20%;
+      width:100%;
+    background:white;
+    }
+    #msg{
+      height:70vh;
+    }
+}
+
+@media (min-width: 1024px) and (max-width:1900px)
+{
+  .sidenav{
+   width:18rem;
+}
+}
+</style>
+<body>
+  <div style="height:100%;width:100%;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.5));z-index:1000;position: absolute;top:0;left:0;visibility: hidden" id="capture">
+    <div class="section"></div><div class="section"></div>
+    <div class="container"> 
+     <div class="container">
+      <div class="row">
+        <div class=" white-text blue" id="video-wrap"style="width:100%;height:30rem" >
+            <video id="video" playsinline autoplay></video>
+        <a class="btn-floating btn-large red  left waves-effect waves pulse" id="snap"><i class="material-icons">adjust</i></a>
+        <a class="btn-floating btn-large red right waves-effect waves pulse" ><i onclick="close();"class="material-icons">close</i></a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+<div class="row">
+  <div class="col s0 l3 xl3">
+  </div>
+  <div class="col s12 l9 xl9">
+  <nav > <!-- navbar content here  --> <a href="#" data-target="slide-out" class="sidenav-trigger "><i class="large material-icons">chevron_left</i></a> 
+  </nav>
+
+<!--</div>-->
+  <ul id="slide-out" class="sidenav sidenav-fixed">
+    <li><div class="user-view">
+      <div class="background">
+        
+      </div>
+      <a class="btn-floating btn-small blue waves-effect waves right" style="margin:0px" id="profile"><i class="material-icons right">more_vert</i></a>
+      <a href="#user"><img class="circle" src="images/hariharan.jpg"></a>
+      <a href="#name"><span class="white-text name">Hariharan</span></a>
+      <a href="#email"><span class="white-text email">hari21032001@gmail.com</span></a>
+    </div></li>
+
+      <div id="friends" style="height:80%;overflow-y:auto;border-top:4px solid #423c3c">
+   
+       <ul class="collection" style="background: white;color: black">
+        
+    
+    <li class="collection-item avatar">
+      <img src="images/hp.jpg" alt="" class="circle">
+      <span class="title">HariPrasad</span>
+      <span class="new badge blue btn-floating pulse">3</span>
+    </li>
+    <li class="collection-item avatar">
+      <img src="images/Kowreesh.jpg" alt="" class="circle">
+      <span class="title">Kowreesh</span>
+           <span class="new badge blue btn-floating pulse">1</span>
+    </li>
+    <li class="collection-item avatar">
+      <img src="images/syed.jpg" alt="" class="circle">
+      <span class="title">Syed</span>
+        </li>
+   <li class="collection-item avatar">
+      <img src="images/vidul.jpg" alt="" class="circle">
+      <span class="title">Vidul</span>
+       </li>
+    <li class="collection-item avatar">
+      <img src="images/sharan.jpg" alt="" class="circle">
+      <span class="title">Sharan</span> 
+    </li>
+   <li class="collection-item avatar">
+      <img src="images/Kowreesh.jpg" alt="" class="circle">
+      <span class="title">Kowreesh</span>
+      
+    </li> <li class="collection-item avatar">
+      <img src="images/Kowreesh.jpg" alt="" class="circle">
+      <span class="title">Kowreesh</span>
+      
+    </li> <li class="collection-item avatar">
+      <img src="images/Kowreesh.jpg" alt="" class="circle">
+      <span class="title">Kowreesh</span>
+      
+    </li>
+    <li class="collection-item avatar">
+      <img src="images/syed.jpg" alt="" class="circle">
+      <span class="title">Syed</span>
+        </li>
+  </ul>
+            
+    </div>
+  </ul>
+   <div class="row" style="padding:0;margin:0">
+   
+   <div class="col s12 xl12" style="padding:0px;margin:0;
+		background:#423c3c;height:100vh;box-shadow: 0px 4px 9px 9px rgba(0,0,0,.5);">
+   	<header>
+     <ul class="collection"  style="color: black;height:60px;padding:0px;margin:0;height:75px !important">
+    <li class="collection-item avatar " style="background:#423c3c;color:white;border-radius: 10px">
+      <img src="images/hp.jpg"alt="" class="circle materialboxed" >
+      <span class="title" style="place-items:center">Hariprasad</span>  
+      <div class="right" style="display: flex;">
+
+<a class="btn-floating btn-small blue right " style="margin-right:10px"><i class="material-icons right" onclick="videostart()">linked_camera</i></a>
+     
+<a class="btn-floating btn-small blue right"style="margin-right:10px"><i class="material-icons right">videocam</i></a>
+    
+     <a class="btn-floating btn-small blue waves-effect waves right" style="margin-right:10px" id="menu"><i class="material-icons right">more_vert</i></a>
+    </div>
+
+<div class="right lastseen "style="display: flex">      <h6 style="margin-right:20px">Last seen at 12:00PM</h6></div>  
+    
+    </li>
+   </ul>
+   	</header>
+   	<div id="contextmenu1">
+  <a href="#" >Mute Notification</a>
+  <a href="#" onclick="DeleteChat()">Clear Chat</a>
+  <a href="#">Block</a>
+  <a href="#">Exit Chat</a>
+</div>
+   	<div class="row" style="margin:0px;">
+   		<div class="col s12" style="background:#272727;width:100%;overflow-y: auto;border-radius:5px" id="msg">
+   			 <div class="card right blue darken-1 hoverable" id="cardright" style="margin-left:50%">
+        <div class="card-content white-text">
+          <p>Hii</p>
+        </div>
+    </div><br><br>
+   
+   		<div class="card left grey darken-1 hoverable" id="cardleft" style="margin-right:50%">
+        <div class="card-content white-text">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+    </div>		 <div class="card right blue darken-1 hoverable" id="cardright" style="margin-left:50%">
+        <div class="card-content white-text">
+          <p>Yeah Iam Good!!</p>
+        </div>
+    </div>
+    <div id="contextmenu">
+  <a href="#" onclick="Delete()">Delete<i class="material-icons right">delete</i></a>
+  <a href="#" onclick="myFunction()">Copy<i class="material-icons right">content_copy</i></a>
+  <a href="#">Cut<i class="material-icons right">content_cut</i></a>
+</div>
+
+   		<br><br>
+    
+   		<div class="card left grey darken-1 hoverable" id="cardleft" style="margin-right:50%">
+        <div class="card-content white-text">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+    </div> <div class="card right blue darken-1 hoverable" id="cardright" style="margin-left:50%">
+        <div class="card-content white-text">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+    </div>
+   		<div class="card left grey darken-1 hoverable" id="cardleft" style="margin-right:50%">
+        <div class="card-content white-text">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+    </div>
+     <div class="card right blue darken-1 hoverable" id="cardright" style="margin-left:50%">
+        <div class="card-content white-text">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+    </div>
+   		<div class="card left grey darken-1 hoverable" id="cardleft" style="margin-right:50%">
+        <div class="card-content white-text">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+    </div>
+   		</div>
+
+    <div class=" col s12 "style="background:black;">
+      <div class="input-field col s2 md3 l3 xl1" >
+<a class="btn-floating btn-Medium blue waves-effect waves"  onclick="getFile(event)"style="margin-right:0px"><i class="material-icons right">linked_camera</i><input type="file" onchange="loadFile(event)" id="upfile" accept=".jpg,.jpeg,.png,.svg"></a>
+</div>
+    <div class="input-field col s6 xl9">
+          <input id="icon_prefix" class="msginput"type="text"  style="color:white" onkeypress="uniCharCode(event)" placeholder="Type a message">
+</div>
+<div class="input-field col s4 md3 l3 xl2" >
+
+
+<a class="btn-floating btn-Medium blue waves-effect waves" style="margin-right:0px" onclick="message()"><i class="material-icons right">send</i></a>
+
+<a class="btn-floating btn-Medium blue waves-effect waves"  onclick="getFile(event)"style="margin-right:2px;opacity:1"><i class="material-icons right" style="opacity:1">attachment</i><input type="file" id="upfile"style="opacity:0;cursor:pointer;"/></a>
+</div>
+
+       </div>
+   	</div>
+   
+   </div>
+</div>
+</div>
+</div>
+</body>
+<script>
+     $(document).ready(function(){
+    $('.sidenav').sidenav();
+     $('.materialboxed').materialbox();
+  });
+     function getFile(event) {
+  document.getElementById("upfile").click();
+  
+}
+
+
+var loadFile = function(event) {
+ var msgid=document.getElementById("msg");
+  var source = URL.createObjectURL(event.target.files[0]);
+  var image=`<div class="card right blue darken-1 hoverable " id="cardright" style="margin-left:50%"><img src="${source}" alt="" style="object-fit:contain;display:block;width:100%;height:100%;"></div><br><br>`;
+  msgid.innerHTML+=image;
+    $(msgid).scrollTop(10000);
+};
+	function uniCharCode(event) {
+
+  if(event.keyCode==13)
+  {
+  	message();
+  }
+  
+}
+	const message=()=>{
+		var msg=document.querySelector(".msginput");
+		var msgid=document.getElementById("msg");
+		if(msg.value!=""){
+		var msgto=`<div class="card right blue darken-1 hoverable" id="cardright" style="margin-left:50%">
+        <div class="card-content white-text">
+          <p>${msg.value}</p>
+        </div>
+    </div> `;
+         msgid.innerHTML+=msgto;
+    		msg.value="";
+    		$(msgid).scrollTop(1000);
+    	}
+    		else{
+    			msg.focus();
+    		}
+	}
+	var deletemsg;
+//window.oncontextmenu = function () { return false; }
+	$('.card').on("contextmenu",(event)=>
+	{
+//		alert($(this))
+		$('#contextmenu').show();
+		$('#contextmenu').css({left:event.pageX+'px',top:event.pageY+'px'})
+		;
+	//	$('.card').remove();
+	//	$("#contextmenu").fadeIn();
+	})
+
+	$('#menu').on('dblclick',(event)=>
+	{
+		$('#contextmenu1').show();
+		var leftmenu=event.pageX-0;
+		$('#contextmenu1').css({left:leftmenu+'px',top:event.pageY+'px'})
+	//	$('.card').remove();
+	//	$("#contextmenu").fadeIn();
+	})
+  $('#profile').on('dblclick',(event)=>
+  {
+    $('#contextmenu1').show();
+    var leftmenu=event.pageX-0;
+    $('#contextmenu1').css({left:leftmenu+'px',top:event.pageY+'px'})
+  //  $('.card').remove();
+  //  $("#contextmenu").fadeIn();
+  })
+	const Delete=()=>{
+		alert("deleted"+deletemsg)
+      $('.card').remove();
+	}
+	const DeleteChat=()=>{
+		alert("deleted"+deletemsg)
+      $('.card').remove();
+      var toastHTML = '<span>The Chat Is cleared</span>';
+      M.toast({html: toastHTML})
+	}
+	$(document).click(event=>{
+		//$("#contextmenu").fadeOut();
+		$('#contextmenu').hide();
+		$('#contextmenu1').hide();
+	})
+	function myFunction() {
+  var copyText = document.querySelectorAll(".card").innerHTML;
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value);
+}
+
+
+function videostart(){
+   document.querySelector("#capture").style.visibility="visible"; 
+const video = document.getElementById('video');
+const snap = document.getElementById("snap");
+
+const constraints = {
+    audio:false,
+    video: {
+        width: 1280, height: 720
+    }
+};
+
+// Access webcam
+async function init() {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+        handleSuccess(stream);
+    } catch (e) {
+      alert(e);
+    }
+}
+function close(){
+  console.log("closed")
+    document.querySelector('#capture').style.visibility="hidden";
+  }
+// Success
+function handleSuccess(stream) {
+    window.stream = stream;
+    video.srcObject = stream;
+}
+
+// Load init
+init();
+
+// Draw image
+snap.addEventListener("click", function() {
+  var msgid=document.getElementById("msg");
+  var source =video;
+  var image=`<div class="card right blue darken-1 hoverable " id="cardright" style="margin-left:50%"><img src="${source}" alt="" style="object-fit:contain;display:block;width:100%;height:100%;"></div><br><br>`;
+  msgid.innerHTML+=image;
+    $(msgid).scrollTop(10000);
+    document.querySelector("#capture").style.visibility="hidden";  
+});
+}
+	</script>
+}
+</html>
